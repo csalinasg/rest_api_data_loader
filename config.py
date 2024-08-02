@@ -26,6 +26,7 @@ def get_connection():
 
 allowed_file_types = ['.csv'] 
 
+#diccionario de configuracion para archivos .csv nuevos, los archivos deben ser sin encabezado 
 files_configuration = {
     "hired_employees": {
         "table": "hired_employees",
