@@ -1,0 +1,7 @@
+flask
+flask_wtf  
+snowflake-connector-python
+python-dotenv
+pandas
+snowflake-connector-python[secure-local-storage,pandas]
+snowflake-connector-python[pandas]
