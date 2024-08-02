@@ -6,12 +6,22 @@ Rest API para carga de archivos csv a Snowflake por defecto viene configurado pa
 
 ## Características
 
-- Permite la carga de datos a traves de csv (departaments.csv, hired_employees.csv, jobs.csv)
+- Permite la carga de archivos a traves de un endpoint o a traves de una interfaz web
+- Permite la carga de datos en formato csv por defecto para departaments.csv, hired_employees.csv, jobs.csv.
 - Permite consultar empleados contratados por trimestre
 - Permite consultar empleados contratados por departamento que sea mayor al promedio de contrataciones del 2021
 - Permite la carga de nuevos archivos csv delimitados por "," los cuales se deben agregar al diccionario en el archivo config.py
 
+## Limitaciones
+
+- Los archivos no deben contener encabezado y deben estar delimitados por ",".
+- Solo acepta formato csv.
+- No acepta archivos mayores a 2 MB.
+- permite la carga de maximo 1000 registros por solicitud.
+
 ## Requisitos
+
+Python:
 
 flask
 flask_wtf  
@@ -23,11 +33,20 @@ snowflake-connector-python[pandas]
 
 Las dependencias se encuentran en el archivo requirements.txt
 
+Base de Datos:
+
+Datawarehouse Snowflake
+
 ## Ejecución
 
 Para ejecutar la aplicacion localmente en el puerto 5000. 
 python main.py
 
+## Formuario WEB
+
+Se puede acceder a un formulario web para la carga de archivos a traves de la URL:
+
+http://127.0.0.1:5000/
 
 ## Endpoints:
 
@@ -52,3 +71,5 @@ curl --location 'http://127.0.0.1:5000/departments/quarter'
 
 curl --location 'http://127.0.0.1:5000/departments/top'
 
+
+## ************* Challenge creado para el cargo de Data Engineer en la empresa GLOBANT *************
